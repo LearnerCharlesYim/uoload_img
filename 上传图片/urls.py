@@ -22,6 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.IndexView.as_view(),name='index'),
-    path('modify/',views.modify,name='modify')
+    path('modify/',views.modify,name='modify'),
+    path('upload/',views.upload,name='upload'),
+    path('download/<name>',views.download,name='download')
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
